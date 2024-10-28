@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    overflow: hidden;
+
+}
+
+/* Intro Screen */
+.intro-screen {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+}
+
+.open-button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #8f9b86;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin: 0;
+}
+
+.open-button:hover {
+    transform: scale(1.05);
+    background-color: white;
+    color: #8f9b86;
+
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+/* Invitation Content */
+.invitation-content {
+    display: none;
+    padding: 20px;
+    color: #333;
+    background-color: #f1f7ee;
+    overflow-y: auto;
+    height: 100vh;
+    font-family: "openSans-cond";
+    font-size: 14px;
+}
+
+/* .invitation-content b {
+    font-family: "openSans-cond-bold";
+
+} */
+
+.main-name {
+    font-family: "flatlion";
+    font-size: 100px;
+    color: #9D8411;
+}
+
+/* Section */
+.section {
+    margin-bottom: 50px;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+
+/* Floating Navbar */
+.floating-menu {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    background-color: #8f9b86;
+    border-radius: 10px;
+    padding: 10px 20px;
+    gap: 15px;
+}
+
+.floating-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.floating-menu a:hover {
+    color: #FFD700;
+}
+
+
+.invitation-title {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 18%;
+    text-align: center;
+    margin: 0;
+    font-size: 9vw;
+    /* Ubah angka sesuai kebutuhan */
+}
+
+.nameing {
+    margin-top: 15px;
+    width: 100%
+}
+
+.invitation-bottom {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+
+/* font family */
+@font-face {
+    font-family: 'openSans-cond';
+    /*memberikan nama bebas untuk font*/
+    src: url('asset/font/OpenSans-CondLight.ttf');
+    /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face {
+    font-family: 'openSans-cond-bold';
+    /*memberikan nama bebas untuk font*/
+    src: url('asset/font/OpenSans-CondBold.ttf');
+    /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face {
+    font-family: 'flatlion';
+    /*memberikan nama bebas untuk font*/
+    src: url('asset/font/Flatlion2.ttf');
+    /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face {
+    font-family: 'cormorant-med';
+    /*memberikan nama bebas untuk font*/
+    src: url('asset/font/CormorantGaramond-Medium.ttf');
+    /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face {
+    font-family: 'cormorant-bold';
+    /*memberikan nama bebas untuk font*/
+    src: url('asset/font/CormorantGaramond-Bold.ttf');
+    /*memanggil file font eksternalnya di folder nexa*/
+}
+
+@font-face {
+    font-family: 'billion-miracles';
+    /*memberikan nama bebas untuk font*/
+    src: url('asset/font/Billion Miracles.otf');
+    /*memanggil file font eksternalnya di folder nexa*/
+}
