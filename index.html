@@ -6,133 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding E-Invitation</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
     <script defer src="script.js"></script>
     <style>
-        #bride-groom {
-            text-align: center;
-        }
 
-        .bio {
-            font-family: 'cormorant-med';
-            letter-spacing: 4px;
-
-        }
-
-        .bio b {
-            font-family: 'cormorant-bold';
-        }
-
-        .bio-title {
-            font-size: 16px;
-            margin-top: 5px;
-        }
-
-        .bio-name {
-            font-size: 20px;
-            margin-top: 3px;
-            margin-bottom: 3px;
-        }
-
-        .bio-detail {
-            font-size: 12px;
-            letter-spacing: 3px;
-
-
-        }
-
-        #dan {
-            color: #8F9B86;
-            font-size: 96px;
-            font-weight: normal;
-            text-transform: capitalize;
-            letter-spacing: 0px;
-        }
-
-
-
-        .countdown-container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .countdown {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            color: #646e69;
-        }
-
-        .countdown-item {
-            margin: 0 15px;
-        }
-
-        .countdown-item span {
-            display: block;
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-
-        .event-container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .event-section {
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            padding: 30px;
-            margin: 20px 0;
-        }
-
-        .event-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .date-column {
-            flex: 1;
-            text-align: center;
-        }
-
-        .large-date {
-            font-size: 3em;
-            /* Ukuran besar untuk tanggal */
-            color: #8F9B86;
-            margin: 0;
-        }
-
-        .date-month {
-            font-size: 1.2em;
-            color: #374151;
-            font-weight: bold;
-        }
-
-        .info-column {
-            flex: 1;
-            text-align: left;
-        }
-
-        h2 {
-            color: #8F9B86;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
-
-        .event-time,
-        .event-location {
-            font-size: 1.2em;
-            color: #374151;
-            margin: 5px 0;
-            font-weight: 500;
-        }
     </style>
+
+    <script>
+        // Get the elements with class="custom-column"
+        var elements = document.getElementsByClassName("custom-column");
+
+        // Declare a loop variable
+        var i;
+
+        // Two images side by side
+        function two() {
+            for (i = 0; i < elements.length; i++) {
+                elements[i].style.flex = "50%";
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -187,7 +80,9 @@
 
 
         </section>
+
         <section id="event-details" class="section">
+            <h1 class="invitation-title">Upcoming Celebration</h1>
             <div class="countdown-container">
                 <!-- <h1>Countdown ke 28 Desember 2024</h1> -->
                 <div class="countdown">
@@ -213,22 +108,22 @@
         <section id="event-details" class="section">
             <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Tesa%20Malih&dates=20241228T130000Z/20241228T140000Z&details=Lokasi%3A%20Lamr%20Duri&location=Lamr%20Duri"
                 target="_blank">
-                <button class="open-button">Save the Date</button>
+                <button class="btn btn-primary btn width-100">Save the Date</button>
             </a>
         </section>
 
-        <section>
+        <section class="section">
             <div class="event-container">
                 <div class="event-section akad-event">
                     <div class="event-content">
                         <div class="date-column">
-                            <h2 class="margin-0">Tanggal Akad</h2>
+                            <h2 class="date-month margin-0">Tanggal Akad</h2>
                             <b class="large-date margin-0">28</b>
                             <p class="date-month margin-0">Desember 2024</p>
                         </div>
                         <div class="info-column">
                             <p class="event-time">Jam: 09:00 WIB</p>
-                            <p class="event-location">Lokasi: Gedung Lamr</p>
+                            <p class="event-location">Lokasi: Gedung LAMR</p>
                         </div>
                     </div>
                 </div>
@@ -236,115 +131,194 @@
                 <div class="event-section resepsi-event">
                     <div class="event-content">
                         <div class="date-column">
-                            <h2 class="margin-0">Tanggal Resepsi</h2>
+                            <h2 class="date-month margin-0">Tanggal Resepsi</h2>
                             <b class="large-date margin-0">28</b>
                             <p class="date-month margin-0">Desember 2024</p>
                         </div>
                         <div class="info-column">
                             <p class="event-time">Jam: 11:00 - 16:00 WIB</p>
-                            <p class="event-location">Lokasi: Gedung Lamr</p>
+                            <p class="event-location">Lokasi: Gedung LAMR</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3026466524726!2d101.2001033916153!3d1.2673279882873827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37b7ea595c7fb%3A0x62384f487bffe78c!2sgedung%20LAMR%20DURI!5e0!3m2!1sen!2sid!4v1730121975138!5m2!1sen!2sid"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            <div class="modal-footer">
+                <a href="https://maps.app.goo.gl/u63WQ9jMcMPkyMzS7" target="_blank">
+                    <button type="button" class="btn btn-primary"> Lihat Lokasi </button>
+                </a>
+            </div>
         </section>
-
-
 
         <section id="gallery" class="section">
-            <h2>Galeri Foto</h2>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Galeri gambar dapat ditempatkan di sini.</p>
+            <div class="invitation-title row">Our Gallery</div>
+            <div class="custom-row">
+                <div class="custom-column">
+                    <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
+                    <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
+                    <img src="https://www.w3schools.com/w3images/falls2.jpg" alt="Falls">
+                    <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+                    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature">
+                    <img src="https://www.w3schools.com/w3images/mist.jpg" alt="Mist">
+                    <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+                </div>
+                <div class="custom-column">
+                    <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
+                    <img src="https://www.w3schools.com/w3images/ocean.jpg" alt="Ocean">
+                    <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
+                    <img src="https://www.w3schools.com/w3images/mountainskies.jpg" alt="Mountains">
+                    <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
+                    <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
+                </div>
+            </div>
         </section>
+
         <section id="guest-messages" class="section">
-            <h2>Kirim Ucapan</h2>
-            <form id="message-form">
-                <input type="text" id="guest-name" placeholder="Nama Anda" required>
-                <textarea id="guest-message" placeholder="Ucapan Anda" required></textarea>
-                <button type="submit" class="send-button">Kirim Ucapan</button>
-            </form>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <p>Nama Pengantin Pria & Nama Pengantin Wanita</p>
-            <div id="messages-container"></div>
+            <h1 class="invitation-title row">Write Your Message</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Card title</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                    <fieldset>
+                        <div>
+                            <label for="exampleInputEmail1" class="form-label mt-4">Nama</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Write your name">
+                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                            else.</small> -->
+                        </div>
+                        <div>
+                            <label for="exampleTextarea" class="form-label mt-4">Message</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+            <div id="messages-container" style="max-height: 300px; overflow-y: auto;">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+
+                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">List group item heading</h5>
+                            <small class="text-muted">3 days ago</small>
+                        </div>
+                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
+                            varius blandit.</p>
+                        <small class="text-muted">Donec id elit non mi porta.</small>
+                    </a>
+                </div>
+            </div>
         </section>
+
+        <section id="wish" class="section">
+            <figure class="text-end">
+                <blockquote class="blockquote">
+                    Doa Pengantin
+                    <p class="mb-0">“بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِى خَيْرٍ
+                        "Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah dan semoga Allah
+                        menyatukan kalian berdua dalam kebaikan."”</p>
+
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                    HR. Abu Dawud <cite title="Source Title">2130
+                    </cite>
+                </figcaption>
+            </figure>
+
+        </section>
+
+
+        <section id="thankyou" class="section">
+            <figure class="text-center">
+                <figcaption class="blockquote-footer">
+                    <p class="mb-0 font-green">
+                        Merupakan kehormatan serta kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan
+                        hadir untuk
+                        memberikan doa restu kepada kedua mempelai.<br><br>
+
+                        Turut berbahagia, segenap keluarga besar
+                    </p>
+                </figcaption>
+            </figure>
+            <div class="sign font-green-dark text-center">
+                <div>Tesa</div>
+                <div style="margin-top: -50px">malih</div>
+            </div>
+        </section>
+
+        <footer class="text-center mt-4">
+            <div class="container">
+                <p>&copy; 2024 Tesa Malih. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 
     <nav class="floating-menu" style="display: none;">
-        <a href="#bride-groom" style=""> <svg xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" width="10" height="10" viewBox="0, 0, 400,400">
-                <g id="svgg">
-                    <path id="path0"
-                        d="M136.719 1.544 C 107.573 9.243,91.000 32.485,91.026 65.625 L 91.037 79.297 93.855 87.314 C 101.393 108.765,115.659 124.532,152.344 151.956 C 168.585 164.098,178.567 172.421,184.295 178.596 C 191.252 186.097,193.714 187.492,200.000 187.492 C 206.286 187.492,208.748 186.097,215.705 178.596 C 221.519 172.327,231.286 164.206,248.943 150.956 C 278.014 129.142,290.053 117.331,299.876 100.987 C 318.454 70.077,309.011 25.608,280.281 8.707 C 256.243 -5.434,222.119 -2.418,203.711 15.475 L 200.000 19.082 196.289 15.475 C 182.854 2.416,156.632 -3.716,136.719 1.544 M164.094 33.285 C 174.775 36.457,181.043 44.339,183.911 58.206 C 188.295 79.408,212.227 78.648,216.341 57.177 C 222.711 23.924,268.936 22.681,276.516 55.558 C 281.789 78.430,271.015 93.869,226.172 127.708 C 218.867 133.220,209.996 140.152,206.458 143.112 L 200.026 148.494 193.176 142.802 C 189.408 139.671,180.525 132.739,173.436 127.398 C 132.580 96.614,123.067 84.877,123.053 65.234 C 123.036 40.643,141.215 26.491,164.094 33.285 M276.673 184.404 C 235.070 195.301,217.038 246.518,242.921 280.270 L 246.064 284.367 241.196 286.822 C 227.227 293.865,212.728 306.433,203.091 319.852 C 199.866 324.344,200.247 324.430,195.662 318.164 C 186.608 305.789,165.364 288.325,155.276 284.962 C 154.870 284.827,156.327 282.120,158.512 278.948 C 186.300 238.610,157.048 183.594,107.813 183.594 C 58.577 183.594,29.325 238.610,57.113 278.948 C 59.298 282.120,60.755 284.827,60.349 284.962 C 50.228 288.335,29.581 305.294,20.161 317.969 C -3.580 349.916,-6.342 381.690,13.488 394.743 C 22.205 400.482,5.581 400.033,201.194 399.810 L 376.953 399.609 382.033 397.202 C 404.645 386.486,407.051 350.589,385.240 349.356 C 374.822 348.768,367.989 355.283,367.973 365.820 L 367.969 368.750 292.188 368.750 C 219.352 368.750,216.406 368.695,216.406 367.324 C 216.406 358.191,228.205 337.949,239.807 327.181 C 266.623 302.289,303.355 299.539,336.180 319.967 C 348.788 327.813,361.622 322.277,362.345 308.680 C 362.825 299.661,357.980 294.112,343.202 286.757 L 338.335 284.335 341.466 280.254 C 376.012 235.209,331.892 169.942,276.673 184.404 M304.563 217.484 C 332.386 231.789,323.242 272.266,292.188 272.266 C 258.980 272.266,252.074 227.594,283.472 215.888 C 288.390 214.054,299.532 214.898,304.563 217.484 M120.188 218.265 C 148.011 232.571,138.867 273.047,107.813 273.047 C 74.605 273.047,67.699 228.375,99.097 216.669 C 104.015 214.836,115.157 215.679,120.188 218.265 M126.571 308.838 C 148.636 314.524,167.235 329.513,177.258 349.686 C 180.155 355.518,183.594 365.272,183.594 367.660 C 183.594 368.585,172.109 368.750,107.813 368.750 C 34.977 368.750,32.031 368.695,32.031 367.324 C 32.031 366.540,32.904 363.333,33.971 360.196 C 47.237 321.192,87.615 298.798,126.571 308.838 "
-                        stroke="none" fill-rule="evenodd"></path>
-                </g>
-            </svg></a>
+        <a href="#bride-groom"> Pengantin</a>
         <a href="#event-details">Acara</a>
         <a href="#gallery">Galeri</a>
         <a href="#guest-messages">Ucapan</a>
     </nav>
 
+
+
 </body>
+
+
 
 </html>
