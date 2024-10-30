@@ -18,6 +18,8 @@ function openInvitation() {
     document.querySelector('.invitation-content').style.display = 'block';
     document.querySelector('.floating-menu').style.display = 'flex'; // Tampilkan floating menu
     document.body.style.overflow = 'auto'; // Enable scrolling
+    const audio = document.getElementById('background-audio');
+    audio.play();
 }
 
 // Scroll ke section saat tombol navigasi diklik
@@ -78,3 +80,25 @@ document.addEventListener('scroll', () => {
         resepsiSection.classList.add('visible');
     }
 });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const floatingMenu = document.querySelector('.floating-menu');
+
+document.querySelector('.menu-toggle').addEventListener('click', function () {
+    const menu = document.querySelector('.floating-menu');
+    menu.classList.toggle('menu-expanded');
+});
+
+// Toggle play/pause functionality
+function toggleAudio() {
+    const audio = document.getElementById('background-audio');
+    const playPauseButton = document.getElementById('play-pause-button');
+
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.innerHTML = '<i class="fi fi-rr-pause"></i>'; // Change icon to pause
+    } else {
+        audio.pause();
+        playPauseButton.innerHTML = '<i class="fi fi-rr-play"></i>'; // Change icon to play
+    }
+}

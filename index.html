@@ -7,9 +7,57 @@
     <title>Wedding E-Invitation</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <!-- font flat-ui cdn 2.2.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css"
+        integrity="sha512-PvB3Q4vTvWD/9aiiELYI3uebup/4mtou3Mc/uGudC/Zl+C9BdKUkAI+5jORfA+fvLK4DpzC5VyEN7P2kK43hjg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <audio id="background-audio" src="asset/music/song.mp3"></audio>
     <script defer src="script.js"></script>
     <style>
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
 
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section[data-delay="1"] {
+            transition-delay: 0.2s;
+        }
+
+        .section[data-delay="2"] {
+            transition-delay: 0.4s;
+        }
+
+        .section[data-delay="3"] {
+            transition-delay: 0.6s;
+        }
+
+        .section[data-delay="4"] {
+            transition-delay: 1s;
+        }
+
+        /* Tambahkan lebih banyak jika perlu */
+
+        .head-date {
+            margin: -43px 0px 40px 0px;
+        }
+
+        .profile-img img {
+            width: 60%;
+            object-fit: cover;
+            height: 350px;
+            border-radius: 15px 0px;
+        }
+
+        #play-pause-button {
+            color: white;
+        }
     </style>
 
     <script>
@@ -25,12 +73,36 @@
                 elements[i].style.flex = "50%";
             }
         }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const sections = document.querySelectorAll('.section');
+
+            sections.forEach((section, index) => {
+                section.classList.add('hidden'); // Menambahkan kelas hidden awal
+                section.setAttribute('data-delay', index +
+                    1); // Memberikan atribut data-delay untuk CSS
+            });
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry
+                            .target); // Menghentikan observasi setelah muncul
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => observer.observe(section));
+        });
     </script>
 </head>
 
 <body>
     <div class="intro-screen">
-        <h1 class="invitation-title">THE WEDDING OF</h1>
+        <h1 class="invitation-title xshadow">THE WEDDING OF</h1>
         <div>
             <img class="nameing" src="image/nameRight.png">
         </div>
@@ -41,11 +113,11 @@
     </div>
 
     <div class="invitation-content" style="display: none;">
-        <section id="bride-groom" class="section">
+        <section id="bride-groom" class="section" data-delay="4">
             <h1 class="invitation-title">THE WEDDING OF</h1>
             <div class="main-name">Tesa Malih</div>
+            <div class="head-date">Sabtu, 28 Desmber 2024</div>
 
-            <div>Sabtu, 28 Desmber 2024</div>
             <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu
                 tercurah
                 mengiringi pernikahan kami.</p>
@@ -54,6 +126,7 @@
                 <div class="bio-title">
                     THE BRIDE
                 </div>
+                <div class="profile-img"> <img src="asset/foto/IMG_1334.jpg"></div>
                 <div class="bio-name">
                     FITRI RAHMA<b>TESA</b>
                 </div>
@@ -69,6 +142,7 @@
                 <div class="bio-title">
                     THE GROOM
                 </div>
+                <div class="profile-img"> <img src="asset/foto/IMG_1332.jpg"></div>
                 <div class="bio-name">
                     <b>MALIH</b> MURTADHO
                 </div>
@@ -81,10 +155,12 @@
 
         </section>
 
-        <section id="event-details" class="section">
+        <section id="event-details" class="section" data-delay="4">
             <h1 class="invitation-title">Upcoming Celebration</h1>
+            <!-- <div><img src="asset/foto/image.png" style="width: 100%;"></div> -->
             <div class="countdown-container">
                 <!-- <h1>Countdown ke 28 Desember 2024</h1> -->
+
                 <div class="countdown">
                     <div class="countdown-item">
                         <span id="days"></span>
@@ -105,25 +181,25 @@
                 </div>
         </section>
 
-        <section id="event-details" class="section">
+        <section id="event-details" class="section" data-delay="4">
             <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Tesa%20Malih&dates=20241228T130000Z/20241228T140000Z&details=Lokasi%3A%20Lamr%20Duri&location=Lamr%20Duri"
                 target="_blank">
                 <button class="btn btn-primary btn width-100">Save the Date</button>
             </a>
         </section>
 
-        <section class="section">
+        <section class="section" data-delay="4">
             <div class="event-container">
                 <div class="event-section akad-event">
                     <div class="event-content">
                         <div class="date-column">
-                            <h2 class="date-month margin-0">Tanggal Akad</h2>
+                            <div class="date-month margin-0">Akad</div>
                             <b class="large-date margin-0">28</b>
                             <p class="date-month margin-0">Desember 2024</p>
                         </div>
                         <div class="info-column">
-                            <p class="event-time">Jam: 09:00 WIB</p>
-                            <p class="event-location">Lokasi: Gedung LAMR</p>
+                            <p class="event-time"><i class="fi fi-rr-clock"></i> 09:00 WIB</p>
+                            <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
                         </div>
                     </div>
                 </div>
@@ -131,13 +207,13 @@
                 <div class="event-section resepsi-event">
                     <div class="event-content">
                         <div class="date-column">
-                            <h2 class="date-month margin-0">Tanggal Resepsi</h2>
+                            <div class="date-month margin-0">Resepsi</div>
                             <b class="large-date margin-0">28</b>
                             <p class="date-month margin-0">Desember 2024</p>
                         </div>
                         <div class="info-column">
-                            <p class="event-time">Jam: 11:00 - 16:00 WIB</p>
-                            <p class="event-location">Lokasi: Gedung LAMR</p>
+                            <p class="event-time"><i class="fi fi-rr-clock"></i> 11:00 - 16:00 WIB</p>
+                            <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
                         </div>
                     </div>
                 </div>
@@ -155,7 +231,7 @@
             </div>
         </section>
 
-        <section id="gallery" class="section">
+        <section id="gallery" class="section" data-delay="4">
             <div class="invitation-title row">Our Gallery</div>
             <div class="custom-row">
                 <div class="custom-column">
@@ -178,7 +254,7 @@
             </div>
         </section>
 
-        <section id="guest-messages" class="section">
+        <section id="guest-messages" class="section" data-delay="4">
             <h1 class="invitation-title row">Write Your Message</h1>
             <div class="card">
                 <div class="card-body">
@@ -265,7 +341,7 @@
             </div>
         </section>
 
-        <section id="wish" class="section">
+        <section id="wish" class="section" data-delay="4">
             <figure class="text-end">
                 <blockquote class="blockquote">
                     Doa Pengantin
@@ -283,7 +359,7 @@
         </section>
 
 
-        <section id="thankyou" class="section">
+        <section id="thankyou" class="section" data-delay="4">
             <figure class="text-center">
                 <figcaption class="blockquote-footer">
                     <p class="mb-0 font-green">
@@ -309,10 +385,19 @@
     </div>
 
     <nav class="floating-menu" style="display: none;">
-        <a href="#bride-groom"> Pengantin</a>
-        <a href="#event-details">Acara</a>
-        <a href="#gallery">Galeri</a>
-        <a href="#guest-messages">Ucapan</a>
+        <div class="menu-toggle">
+            <i class="fi fi-rr-apps"></i>
+        </div>
+        <div class="menu-items">
+            <a href="#bride-groom"><i class="fi fi-rr-rings-wedding"></i></a>
+            <a href="#event-details"><i class="fi fi-rr-calendar-heart"></i></a>
+            <a href="#gallery"><i class="fi fi-rr-layout-fluid"></i></a>
+            <a href="#guest-messages"><i class="fi fi-rr-envelope"></i></a>
+            <a id="play-pause-button" onclick="toggleAudio()">
+                <i class="fi fi-rr-pause"></i>
+            </a>
+
+        </div>
     </nav>
 
 
