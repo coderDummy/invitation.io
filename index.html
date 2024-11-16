@@ -14,90 +14,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <audio id="background-audio" src="asset/music/song.mp3"></audio>
     <script defer src="script.js"></script>
-    <style>
-        .hidden {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-in {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .section[data-delay="1"] {
-            transition-delay: 0.2s;
-        }
-
-        .section[data-delay="2"] {
-            transition-delay: 0.4s;
-        }
-
-        .section[data-delay="3"] {
-            transition-delay: 0.6s;
-        }
-
-        .section[data-delay="4"] {
-            transition-delay: 1s;
-        }
-
-        /* Tambahkan lebih banyak jika perlu */
-
-        .head-date {
-            margin: -43px 0px 40px 0px;
-        }
-
-        .profile-img img {
-            width: 60%;
-            object-fit: cover;
-            height: 350px;
-            border-radius: 15px 0px;
-        }
-
-        #play-pause-button {
-            color: white;
-        }
-    </style>
-
-    <script>
-        // Get the elements with class="custom-column"
-        var elements = document.getElementsByClassName("custom-column");
-
-        // Declare a loop variable
-        var i;
-
-        // Two images side by side
-        function two() {
-            for (i = 0; i < elements.length; i++) {
-                elements[i].style.flex = "50%";
-            }
-        }
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const sections = document.querySelectorAll('.section');
-
-            sections.forEach((section, index) => {
-                section.classList.add('hidden'); // Menambahkan kelas hidden awal
-                section.setAttribute('data-delay', index +
-                    1); // Memberikan atribut data-delay untuk CSS
-            });
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('fade-in');
-                        observer.unobserve(entry
-                            .target); // Menghentikan observasi setelah muncul
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-
-            sections.forEach(section => observer.observe(section));
-        });
-    </script>
 </head>
 
 <body>
@@ -117,7 +33,9 @@
             <h1 class="invitation-title">THE WEDDING OF</h1>
             <div class="main-name">Tesa Malih</div>
             <div class="head-date">Sabtu, 28 Desmber 2024</div>
-
+            <p class="text-center margin-top">
+                بِسْــــــــــــــــــمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ
+            </p>
             <p>Maha Suci Allah yang telah menciptakan makhluk-Nya berpasang-pasangan. Ya Allah semoga ridho-Mu
                 tercurah
                 mengiringi pernikahan kami.</p>
@@ -126,7 +44,7 @@
                 <div class="bio-title">
                     THE BRIDE
                 </div>
-                <div class="profile-img"> <img src="asset/foto/IMG_1334.jpg"></div>
+                <div class="profile-img"> <img src="asset/foto/tesa.png"></div>
                 <div class="bio-name">
                     FITRI RAHMA<b>TESA</b>
                 </div>
@@ -142,7 +60,7 @@
                 <div class="bio-title">
                     THE GROOM
                 </div>
-                <div class="profile-img"> <img src="asset/foto/IMG_1332.jpg"></div>
+                <div class="profile-img"> <img src="asset/foto/malih.png"></div>
                 <div class="bio-name">
                     <b>MALIH</b> MURTADHO
                 </div>
@@ -159,229 +77,207 @@
             <h1 class="invitation-title">Upcoming Celebration</h1>
             <!-- <div><img src="asset/foto/image.png" style="width: 100%;"></div> -->
             <div class="countdown-container">
-                <!-- <h1>Countdown ke 28 Desember 2024</h1> -->
-
                 <div class="countdown">
                     <div class="countdown-item">
-                        <span id="days"></span>
-                        <span>Hari</span>
+                        <div class="digits" id="days">
+
+                        </div>
+                        <span>DAY</span>
                     </div>
                     <div class="countdown-item">
-                        <span id="hours"></span>
-                        <span>Jam</span>
+                        <div class="digits" id="hours">
+
+                        </div>
+                        <span>HOUR</span>
                     </div>
                     <div class="countdown-item">
-                        <span id="minutes"></span>
-                        <span>Menit</span>
+                        <div class="digits" id="minutes">
+
+                        </div>
+                        <span>MINUTE</span>
                     </div>
                     <div class="countdown-item">
-                        <span id="seconds"></span>
-                        <span>Detik</span>
-                    </div>
-                </div>
-        </section>
+                        <div class="digits" id="seconds">
 
-        <section id="event-details" class="section" data-delay="4">
-            <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Tesa%20Malih&dates=20241228T130000Z/20241228T140000Z&details=Lokasi%3A%20Lamr%20Duri&location=Lamr%20Duri"
-                target="_blank">
-                <button class="btn btn-primary btn width-100">Save the Date</button>
-            </a>
-        </section>
-
-        <section class="section" data-delay="4">
-            <div class="event-container">
-                <div class="event-section akad-event">
-                    <div class="event-content">
-                        <div class="date-column">
-                            <div class="date-month margin-0">Akad</div>
-                            <b class="large-date margin-0">28</b>
-                            <p class="date-month margin-0">Desember 2024</p>
                         </div>
-                        <div class="info-column">
-                            <p class="event-time"><i class="fi fi-rr-clock"></i> 09:00 WIB</p>
-                            <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="event-section resepsi-event">
-                    <div class="event-content">
-                        <div class="date-column">
-                            <div class="date-month margin-0">Resepsi</div>
-                            <b class="large-date margin-0">28</b>
-                            <p class="date-month margin-0">Desember 2024</p>
-                        </div>
-                        <div class="info-column">
-                            <p class="event-time"><i class="fi fi-rr-clock"></i> 11:00 - 16:00 WIB</p>
-                            <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
-                        </div>
+                        <span>SECOND</span>
                     </div>
                 </div>
             </div>
 
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3026466524726!2d101.2001033916153!3d1.2673279882873827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37b7ea595c7fb%3A0x62384f487bffe78c!2sgedung%20LAMR%20DURI!5e0!3m2!1sen!2sid!4v1730121975138!5m2!1sen!2sid"
-                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-            <div class="modal-footer">
-                <a href="https://maps.app.goo.gl/u63WQ9jMcMPkyMzS7" target="_blank">
-                    <button type="button" class="btn btn-primary"> Lihat Lokasi </button>
+
+            <section id="event-details" class="section" data-delay="4">
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Tesa%20Malih&dates=20241228T130000Z/20241228T140000Z&details=Lokasi%3A%20Lamr%20Duri&location=Lamr%20Duri"
+                    target="_blank">
+                    <button class="btn btn-primary btn width-100">Save the Date</button>
                 </a>
-            </div>
-        </section>
+            </section>
 
-        <section id="gallery" class="section" data-delay="4">
-            <div class="invitation-title row">Our Gallery</div>
-            <div class="custom-row">
-                <div class="custom-column">
-                    <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
-                    <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
-                    <img src="https://www.w3schools.com/w3images/falls2.jpg" alt="Falls">
-                    <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
-                    <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature">
-                    <img src="https://www.w3schools.com/w3images/mist.jpg" alt="Mist">
-                    <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+            <section class="section" data-delay="4">
+                <div class="event-container">
+                    <div class="event-section akad-event">
+                        <div class="event-content">
+                            <div class="date-column">
+                                <div class="date-month margin-date-top">Akad</div>
+                                <b class="large-date margin-0">28</b>
+                                <p class="date-month margin-date-bottom">Desember 2024</p>
+                            </div>
+                            <div class="info-column">
+                                <p class="event-time"><i class="fi fi-rr-clock"></i> 09:00 WIB</p>
+                                <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="event-section resepsi-event">
+                        <div class="event-content">
+                            <div class="date-column">
+                                <div class="date-month margin-date-top">Resepsi</div>
+                                <b class="large-date margin-0">28</b>
+                                <p class="date-month margin-date-bottom">Desember 2024</p>
+                            </div>
+                            <div class="info-column">
+                                <p class="event-time"><i class="fi fi-rr-clock"></i> 11:00 - 16:00 WIB</p>
+                                <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="custom-column">
-                    <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
-                    <img src="https://www.w3schools.com/w3images/ocean.jpg" alt="Ocean">
-                    <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
-                    <img src="https://www.w3schools.com/w3images/mountainskies.jpg" alt="Mountains">
-                    <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
-                    <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
-                </div>
-            </div>
-        </section>
 
-        <section id="guest-messages" class="section" data-delay="4">
-            <h1 class="invitation-title row">Write Your Message</h1>
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="card-title">Card title</h4>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <fieldset>
-                        <div>
-                            <label for="exampleInputEmail1" class="form-label mt-4">Nama</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Write your name">
-                            <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small> -->
-                        </div>
-                        <div>
-                            <label for="exampleTextarea" class="form-label mt-4">Message</label>
-                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                        </div>
-                    </fieldset>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-            </div>
-            <div id="messages-container" style="max-height: 300px; overflow-y: auto;">
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                            varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                            varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                            varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                            varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                            varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
-                    </a>
-
-                    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">List group item heading</h5>
-                            <small class="text-muted">3 days ago</small>
-                        </div>
-                        <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-                            varius blandit.</p>
-                        <small class="text-muted">Donec id elit non mi porta.</small>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3026466524726!2d101.2001033916153!3d1.2673279882873827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37b7ea595c7fb%3A0x62384f487bffe78c!2sgedung%20LAMR%20DURI!5e0!3m2!1sen!2sid!4v1730121975138!5m2!1sen!2sid"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <div class="modal-footer">
+                    <a href="https://maps.app.goo.gl/u63WQ9jMcMPkyMzS7" target="_blank">
+                        <button type="button" class="btn btn-primary"> Lihat Lokasi </button>
                     </a>
                 </div>
+            </section>
+
+            <section id="gallery" class="section" data-delay="4">
+                <div class="invitation-title row">Our Gallery</div>
+                <div class="custom-row">
+                    <div class="custom-column">
+                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
+                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
+                        <img src="https://www.w3schools.com/w3images/falls2.jpg" alt="Falls">
+                        <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+                        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature">
+                        <img src="https://www.w3schools.com/w3images/mist.jpg" alt="Mist">
+                        <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+                    </div>
+                    <div class="custom-column">
+                        <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
+                        <img src="https://www.w3schools.com/w3images/ocean.jpg" alt="Ocean">
+                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
+                        <img src="https://www.w3schools.com/w3images/mountainskies.jpg" alt="Mountains">
+                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
+                        <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
+                    </div>
+                </div>
+            </section>
+
+            <section id="guest-messages" class="section" data-delay="4">
+                <h1 class="invitation-title row">Write Your Message</h1>
+                <div class="card">
+                    <div class="card-body">
+                        <fieldset>
+                            <div>
+                                <label for="nameInput" class="form-label mt-4">Nama</label>
+                                <input type="text" class="form-control" id="nameInput" placeholder="Write your name">
+                            </div>
+                            <div>
+                                <label for="messageTextarea" class="form-label mt-4">Message</label>
+                                <textarea class="form-control" id="messageTextarea" rows="3"></textarea>
+                            </div>
+                        </fieldset>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                    </div>
+                </div>
+                <div id="messages-container" style="max-height: 300px; overflow-y: auto;">
+                    <div class="list-group" id="messagesList"></div>
+                </div>
+            </section>
+
+            <!-- Overlay untuk loading -->
+            <div id="loadingOverlay" style="display: none;">
+                <div class="loading-content">
+                    <img src="https://media.tenor.com/rpB6p4hBSZQAAAAj/discord-discordgifemoji.gif" alt="Loading..." />
+                </div>
             </div>
-        </section>
 
-        <section id="wish" class="section" data-delay="4">
-            <figure class="text-end">
-                <blockquote class="blockquote">
-                    Doa Pengantin
-                    <p class="mb-0">“بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِى خَيْرٍ
-                        "Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah dan semoga Allah
-                        menyatukan kalian berdua dalam kebaikan."”</p>
+            <style>
+                /* CSS untuk overlay */
+                #loadingOverlay {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.8);
+                    /* Opacity hitam */
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 1000;
+                    /* Pastikan overlay berada di atas semua elemen */
+                }
 
-                </blockquote>
-                <figcaption class="blockquote-footer">
-                    HR. Abu Dawud <cite title="Source Title">2130
-                    </cite>
-                </figcaption>
-            </figure>
+                .loading-content img {
+                    width: 100px;
+                    /* Sesuaikan ukuran gambar */
+                }
+            </style>
 
-        </section>
+            <script>
+
+            </script>
 
 
-        <section id="thankyou" class="section" data-delay="4">
-            <figure class="text-center">
-                <figcaption class="blockquote-footer">
-                    <p class="mb-0 font-green">
-                        Merupakan kehormatan serta kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i berkenan
-                        hadir untuk
-                        memberikan doa restu kepada kedua mempelai.<br><br>
+            <section id="wish" class="section" data-delay="4">
+                <figure class="text-end">
+                    <blockquote class="blockquote">
+                        Doa Pengantin
+                        <p class="mb-0">“بَارَكَ اللهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِى خَيْرٍ
+                            "Semoga Allah memberkahimu di waktu bahagia dan memberkahimu di waktu susah dan semoga Allah
+                            menyatukan kalian berdua dalam kebaikan."”</p>
 
-                        Turut berbahagia, segenap keluarga besar
-                    </p>
-                </figcaption>
-            </figure>
-            <div class="sign font-green-dark text-center">
-                <div>Tesa</div>
-                <div style="margin-top: -50px">malih</div>
-            </div>
-        </section>
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                        HR. Abu Dawud <cite title="Source Title">2130
+                        </cite>
+                    </figcaption>
+                </figure>
 
-        <footer class="text-center mt-4">
-            <div class="container">
-                <p>&copy; 2024 Tesa Malih. All rights reserved.</p>
-            </div>
-        </footer>
+            </section>
+
+
+            <section id="thankyou" class="section" data-delay="4">
+                <figure class="text-center">
+                    <figcaption class="blockquote-footer">
+                        <p class="mb-0 font-green">
+                            Merupakan kehormatan serta kebahagiaan bagi kami sekeluarga apabila Bapak/Ibu/Saudara/i
+                            berkenan
+                            hadir untuk
+                            memberikan doa restu kepada kedua mempelai.<br><br>
+
+                            Turut berbahagia, segenap keluarga besar
+                        </p>
+                    </figcaption>
+                </figure>
+                <div class="sign font-green-dark text-center">
+                    <div>Tesa</div>
+                    <div style="margin-top: -50px">malih</div>
+                </div>
+            </section>
+
+            <footer class="text-center mt-4">
+                <div class="container">
+                    <p>&copy; 2024 Tesa Malih. All rights reserved.</p>
+                </div>
+            </footer>
     </div>
 
     <nav class="floating-menu" style="display: none;">
