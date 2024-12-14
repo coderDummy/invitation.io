@@ -35,9 +35,10 @@ document.querySelectorAll('.floating-menu a').forEach(anchor => {
 });
 
 function updateCountdown() {
-    const targetDate = new Date("2024-12-28T00:00:00").getTime();
+    const targetStartDate = new Date("2024-12-28T09:00:00").getTime();
+    const targetEndDate = new Date("2024-12-28T17:00:00").getTime();
     const now = new Date().getTime();
-    const distance = targetDate - now;
+    const distance = targetEndDate - now;
 
     // Menghitung hari, jam, menit, dan detik
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -45,8 +46,24 @@ function updateCountdown() {
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    // Fungsi untuk memastikan dua digit (contoh: 8 menjadi 08)
+    // Fungsi untuk memastikan dua digit
     const formatNumber = (num) => num < 10 ? `0${num}` : num.toString();
+
+    // Memeriksa apakah waktu berada di antara waktu mulai dan waktu selesai acara
+    if (now >= targetStartDate && now < targetEndDate) {
+        document.querySelector("#label-event").innerText = "THE EVENT IS CURRENTLY HAPPENING";
+        document.querySelector(".countdown-container").innerHTML = "Please join us at the event.";
+        document.querySelector("#event-details .btn").innerHTML = "GO TO LOCATION NOW";
+        return;
+    }
+
+    // Jika waktu telah melewati waktu selesai acara
+    if (now >= targetEndDate) {
+        document.querySelector("#label-event").innerText = "THE EVENT HAS ENDED";
+        document.querySelector(".countdown-container").innerHTML = "THANK YOU FOR YOUR PRESENCE.";
+        document.querySelector("#event-details .btn").innerHTML = "SEE YOU";
+        return;
+    }
 
     // Memisahkan tiap digit
     const daysDigits = formatNumber(days);
@@ -60,10 +77,10 @@ function updateCountdown() {
     document.getElementById("minutes").innerHTML = `<div>${minutesDigits[0]}</div><div>${minutesDigits[1]}</div>`;
     document.getElementById("seconds").innerHTML = `<div>${secondsDigits[0]}</div><div>${secondsDigits[1]}</div>`;
 
-    // Jika waktu sudah habis
+    // Jika waktu sudah habis untuk countdown
     if (distance < 0) {
         clearInterval(countdownInterval);
-        document.querySelector(".countdown-container h1").innerText = "Waktu telah habis!";
+        document.querySelector(".countdown-container h1").innerText = "The countdown has ended!";
         document.querySelector(".countdown").style.display = "none";
     }
 }
@@ -138,8 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section, index) => {
         section.classList.add('hidden'); // Menambahkan kelas hidden awal
-        section.setAttribute('data-delay', index +
-            1); // Memberikan atribut data-delay untuk CSS
+        section.setAttribute('data-delay', index * 50); // Memberikan atribut data-delay untuk CSS
     });
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -335,4 +351,17 @@ document.getElementById('submitBtn').addEventListener('click', (e) => {
 // Ambil semua pesan saat halaman dimuat
 fetchWishMessages();
 
-// J8R7.W9kqzYx*r@
+
+function copyToClipboard(i) {
+    // Ambil elemen span
+    const textToCopy = document.getElementById(`copy-text-${i}`).innerText;
+
+    // Gunakan Clipboard API untuk menyalin teks
+    navigator.clipboard.writeText(textToCopy)
+        .then(() => {
+            alert('Teks berhasil disalin: ' + textToCopy);
+        })
+        .catch(err => {
+            alert('Gagal menyalin teks: ' + err);
+        });
+}

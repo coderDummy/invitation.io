@@ -4,35 +4,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding E-Invitation</title>
+    <title>Wedding Tesa Malih</title>
+    <link rel="icon" type="image/x-icon" href="image/logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-    <!-- font flat-ui cdn 2.2.2 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css"
         integrity="sha512-PvB3Q4vTvWD/9aiiELYI3uebup/4mtou3Mc/uGudC/Zl+C9BdKUkAI+5jORfA+fvLK4DpzC5VyEN7P2kK43hjg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <audio id="background-audio" src="asset/music/song.mp3"></audio>
     <script defer src="script.js"></script>
+
+    <link rel="preload" href="asset/font/OpenSans-CondLight.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/Flatlion2.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/CormorantGaramond-Medium.ttf" as="font" type="font/ttf"
+        crossorigin="anonymous">
+    <link rel="preload" href="asset/font/CormorantGaramond-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/Billion Miracles.otf" as="font" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/Nickainley.otf" as="font" type="font/otf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/Poppins-ExtraBold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/AmaticSC-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/Brittany.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/AmaticSC-Bold.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+    <link rel="preload" href="asset/font/AmaticSC-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
+
 </head>
 
 <body>
     <div class="intro-screen">
-        <h1 class="invitation-title xshadow">THE WEDDING OF</h1>
-        <div>
-            <img class="nameing" src="image/nameRight.png">
+        <div class="cover-body front">The Wedding of</div>
+        <div class="cover-body">
         </div>
         <div class="invitation-bottom ">
-            <p class="guest-name">Kepada Yth. Bapak/Ibu <span id="guest-name-placeholder"></span></p>
+            <p class="guest-name">Dear,<span id="guest-name-placeholder"></span></p>
             <button class="open-button" onclick="openInvitation()">Buka Undangan</button>
         </div>
     </div>
-
     <div class="invitation-content" style="display: none;">
         <section id="bride-groom" class="section" data-delay="4">
             <h1 class="invitation-title">THE WEDDING OF</h1>
             <div class="main-name">Tesa Malih</div>
-            <div class="head-date">Sabtu, 28 Desmber 2024</div>
+            <div class="head-date">Sabtu, 28 Desember 2024</div>
             <p class="text-center margin-top">
                 بِسْــــــــــــــــــمِ اللهِ الرَّحْمَنِ الرَّحِيْمِ
             </p>
@@ -44,7 +56,7 @@
                 <div class="bio-title">
                     THE BRIDE
                 </div>
-                <div class="profile-img"> <img src="asset/foto/tesa.png"></div>
+                <div class="profile-img"> <img src="asset/foto/IMG_1334.jpg"></div>
                 <div class="bio-name">
                     FITRI RAHMA<b>TESA</b>
                 </div>
@@ -60,7 +72,7 @@
                 <div class="bio-title">
                     THE GROOM
                 </div>
-                <div class="profile-img"> <img src="asset/foto/malih.png"></div>
+                <div class="profile-img"> <img src="asset/foto/IMG_1332.jpg"></div>
                 <div class="bio-name">
                     <b>MALIH</b> MURTADHO
                 </div>
@@ -73,8 +85,17 @@
 
         </section>
 
+        <div style="display: flex; align-items: center;">
+            <hr style="flex: 1; border: 0; border-top: 1px solid #6c757d;">
+            <span style="color: #97a396; margin: 0 1rem; font-size: 1.2rem;">♥ <b style="font-size: 26px;">♥</b>
+                ♥</span>
+            <hr style="flex: 1; border: 0; border-top: 1px solid #6c757d;">
+        </div>
+
         <section id="event-details" class="section" data-delay="4">
-            <h1 class="invitation-title">Upcoming Celebration</h1>
+            <h1 id="label-event" class="invitation-title" style="font-size: 34px;margin-top: 10px;">
+                Upcoming Celebration
+            </h1>
             <!-- <div><img src="asset/foto/image.png" style="width: 100%;"></div> -->
             <div class="countdown-container">
                 <div class="countdown">
@@ -105,11 +126,10 @@
                 </div>
             </div>
 
-
             <section id="event-details" class="section" data-delay="4">
                 <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Tesa%20Malih&dates=20241228T130000Z/20241228T140000Z&details=Lokasi%3A%20Lamr%20Duri&location=Lamr%20Duri"
                     target="_blank">
-                    <button class="btn btn-primary btn width-100">Save the Date</button>
+                    <button class="btn btn-primary btn width-100" style="font-size:24px">Save the Date</button>
                 </a>
             </section>
 
@@ -123,8 +143,9 @@
                                 <p class="date-month margin-date-bottom">Desember 2024</p>
                             </div>
                             <div class="info-column">
-                                <p class="event-time"><i class="fi fi-rr-clock"></i> 09:00 WIB</p>
-                                <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
+                                <p class="event-time"><i class="fi fi-rr-clock"></i> 09:00 WIB - Selesai</p>
+                                <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR Duri</p>
+                                <p class="event-detail-loc">Jl. Hangtuah No.18 Batang Serosa, Mandau</p>
                             </div>
                         </div>
                     </div>
@@ -137,8 +158,9 @@
                                 <p class="date-month margin-date-bottom">Desember 2024</p>
                             </div>
                             <div class="info-column">
-                                <p class="event-time"><i class="fi fi-rr-clock"></i> 11:00 - 16:00 WIB</p>
-                                <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR</p>
+                                <p class="event-time"><i class="fi fi-rr-clock"></i> 11:00 - 17:00 WIB</p>
+                                <p class="event-location"><i class="fi fi-rr-house-window"></i> Gedung LAMR Duri</p>
+                                <p class="event-detail-loc">Jl. Hangtuah No.18 Batang Serosa, Mandau</p>
                             </div>
                         </div>
                     </div>
@@ -160,27 +182,84 @@
                 <div class="invitation-title row">Our Gallery</div>
                 <div class="custom-row">
                     <div class="custom-column">
-                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
-                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
-                        <img src="https://www.w3schools.com/w3images/falls2.jpg" alt="Falls">
-                        <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
-                        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Nature">
-                        <img src="https://www.w3schools.com/w3images/mist.jpg" alt="Mist">
-                        <img src="https://www.w3schools.com/w3images/paris.jpg" alt="Paris">
+                        <img src="asset/grid/8.jpg" alt="Wedding">
+                        <img src="asset/grid/1.jpg" alt="Wedding">
+                        <img src="asset/grid/9.jpg" alt="Wedding">
+                        <img src="asset/grid/4.jpg" alt="Paris">
+                        <img src="asset/grid/11.jpg" alt="Paris">
                     </div>
                     <div class="custom-column">
-                        <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
-                        <img src="https://www.w3schools.com/w3images/ocean.jpg" alt="Ocean">
-                        <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Wedding">
-                        <img src="https://www.w3schools.com/w3images/mountainskies.jpg" alt="Mountains">
-                        <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Rocks">
-                        <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Underwater">
+                        <img src="asset/grid/2.jpg" alt="Rocks">
+                        <img src="asset/grid/6.jpg" alt="Wedding">
+                        <img src="asset/grid/7.jpg" alt="Wedding">
+                        <img src="asset/grid/10.jpg" alt="Wedding">
+                        <img src="asset/grid/3.jpg" alt="Falls">
+
                     </div>
                 </div>
             </section>
 
+            <section id="gift" class="section" data-delay="4">
+                <div class="title">WEDDING GIFT</div>
+                <div class="box">
+                    <div class="img-center">
+                        <img class="logo-bank" id="mandiri"
+                            src="https://cdn.worldvectorlogo.com/logos/bank-mandiri-2.svg"> </img>
+                        <div>A/n Fitri Rahmatesa</div>
+                        <div> <b id="copy-text-1">1220010742529</b>
+                            <a onclick="copyToClipboard(1)">&#x1F4C4;</a>
+                        </div>
+
+                        <img class="logo-bank"
+                            src="data:image/png;base64,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">
+                        </img>
+                        <div>A/n Malih Murtadho</div>
+                        <div id="bca"> <b id="copy-text-2">0374007358</b>
+                            <a onclick="copyToClipboard(2)">&#x1F4C4;</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="invitation-title row"></div>
+            </section>
+
+            <style>
+                #gift .title {
+                    color: white;
+                    font-size: 27px;
+                    padding: 20px;
+                    text-align: center;
+                }
+
+                .logo-bank {
+                    height: 67px;
+                    width: 42%;
+                    object-fit: cover;
+                }
+
+                .img-center {
+                    text-align: center;
+                    background-color: white;
+                    margin: 2px;
+                }
+
+                .copy-text {
+                    padding: 1px;
+                }
+
+                #mandiri {
+                    margin-top: 30px
+                }
+
+                #bca {
+                    margin-bottom: 0px;
+                    padding-bottom: 30px;
+                }
+            </style>
+
+
             <section id="guest-messages" class="section" data-delay="4">
-                <h1 class="invitation-title row">Write Your Message</h1>
+                <h1 class="invitation-title row">Wedding Wish</h1>
                 <div class="card">
                     <div class="card-body">
                         <fieldset>
@@ -235,7 +314,6 @@
 
             </script>
 
-
             <section id="wish" class="section" data-delay="4">
                 <figure class="text-end">
                     <blockquote class="blockquote">
@@ -254,7 +332,7 @@
             </section>
 
 
-            <section id="thankyou" class="section" data-delay="4">
+            <section id="thankyou" class="section-end" data-delay="4">
                 <figure class="text-center">
                     <figcaption class="blockquote-footer">
                         <p class="mb-0 font-green">
@@ -268,8 +346,7 @@
                     </figcaption>
                 </figure>
                 <div class="sign font-green-dark text-center">
-                    <div>Tesa</div>
-                    <div style="margin-top: -50px">malih</div>
+                    <div><img style="height: 77px; width: 51%;object-fit: cover;" src="image/sign.png"></img></div>
                 </div>
             </section>
 
@@ -278,6 +355,7 @@
                     <p>&copy; 2024 Tesa Malih. All rights reserved.</p>
                 </div>
             </footer>
+
     </div>
 
     <nav class="floating-menu" style="display: none;">
@@ -295,6 +373,7 @@
 
         </div>
     </nav>
+
 
 
 
