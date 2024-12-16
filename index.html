@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="image/logo.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css"
         integrity="sha512-PvB3Q4vTvWD/9aiiELYI3uebup/4mtou3Mc/uGudC/Zl+C9BdKUkAI+5jORfA+fvLK4DpzC5VyEN7P2kK43hjg=="
@@ -64,6 +65,7 @@
                     PUTRI PERTAMA DARI<br>
                     BAPAK NASRIL & IBU WIRTA MARYENI
                 </div>
+                <a href="https://www.instagram.com/fitrirahmatesa" class="fab fa-instagram icon"></a>
             </div>
             <div id="dan">
                 &
@@ -80,6 +82,7 @@
                     PUTRA KETIGA DARI<br>
                     BAPAK GARIJO HANDOYO & IBU CHOIRIYATI
                 </div>
+                <a href="https://www.instagram.com/malihmurtadho" class="fab fa-instagram icon"></a>
             </div>
 
 
@@ -92,11 +95,10 @@
             <hr style="flex: 1; border: 0; border-top: 1px solid #6c757d;">
         </div>
 
-        <section id="event-details" class="section" data-delay="4">
+        <section id="event-details" class="section">
             <h1 id="label-event" class="invitation-title" style="font-size: 34px;margin-top: 10px;">
                 Upcoming Celebration
             </h1>
-            <!-- <div><img src="asset/foto/image.png" style="width: 100%;"></div> -->
             <div class="countdown-container">
                 <div class="countdown">
                     <div class="countdown-item">
@@ -165,7 +167,6 @@
                         </div>
                     </div>
                 </div>
-
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.3026466524726!2d101.2001033916153!3d1.2673279882873827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d37b7ea595c7fb%3A0x62384f487bffe78c!2sgedung%20LAMR%20DURI!5e0!3m2!1sen!2sid!4v1730121975138!5m2!1sen!2sid"
                     width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
@@ -178,8 +179,8 @@
                 </div>
             </section>
 
-            <section id="gallery" class="section" data-delay="4">
-                <div class="invitation-title row">Our Gallery</div>
+            <section id="gallery" class="section" data-delay="1">
+                <div class="invitation-title row">OUR GALLERY</div>
                 <div class="custom-row">
                     <div class="custom-column">
                         <img src="asset/grid/8.jpg" alt="Wedding">
@@ -200,14 +201,19 @@
             </section>
 
             <section id="gift" class="section" data-delay="4">
-                <div class="title">WEDDING GIFT</div>
+                <div class="title">
+                    <div>WEDDING GIFT</div>
+                    <hr>
+                    <div class="gift-detail">Bagi Keluarga dan Sahabat yang ingin mengirimkan hadiah, silahkan
+                        mengirimkannya melalui :</div>
+                </div>
                 <div class="box">
                     <div class="img-center">
                         <img class="logo-bank" id="mandiri"
                             src="https://cdn.worldvectorlogo.com/logos/bank-mandiri-2.svg"> </img>
                         <div>A/n Fitri Rahmatesa</div>
                         <div> <b id="copy-text-1">1220010742529</b>
-                            <a onclick="copyToClipboard(1)">&#x1F4C4;</a>
+                            <a onclick="copyToClipboard(1)"><i class="fi fi-rr-copy"></i></a>
                         </div>
 
                         <img class="logo-bank"
@@ -215,7 +221,7 @@
                         </img>
                         <div>A/n Malih Murtadho</div>
                         <div id="bca"> <b id="copy-text-2">0374007358</b>
-                            <a onclick="copyToClipboard(2)">&#x1F4C4;</a>
+                            <a onclick="copyToClipboard(2)"><i class="fi fi-rr-copy"></i></a>
                         </div>
                     </div>
 
@@ -240,7 +246,7 @@
                 .img-center {
                     text-align: center;
                     background-color: white;
-                    margin: 2px;
+                    margin: 6px;
                 }
 
                 .copy-text {
@@ -264,7 +270,7 @@
                     <div class="card-body">
                         <fieldset>
                             <div>
-                                <label for="nameInput" class="form-label mt-4">Nama</label>
+                                <label for="nameInput" class="form-label mt-4">Name</label>
                                 <input type="text" class="form-control" id="nameInput" placeholder="Write your name">
                             </div>
                             <div>
@@ -272,7 +278,7 @@
                                 <textarea class="form-control" id="messageTextarea" rows="3"></textarea>
                             </div>
                         </fieldset>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">Submit</button>
+                        <button type="submit" class="btn btn-primary float-right" id="submitBtn">Submit</button>
                     </div>
                 </div>
                 <div id="messages-container" style="max-height: 300px; overflow-y: auto;">
@@ -358,7 +364,7 @@
 
     </div>
 
-    <nav class="floating-menu" style="display: none;">
+    <nav class="floating-menu menu-expanded" style="display: none;">
         <div class="menu-toggle">
             <i class="fi fi-rr-apps"></i>
         </div>
